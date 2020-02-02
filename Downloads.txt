@@ -1,0 +1,6 @@
+-From here:
+	https://chromedriver.storage.googleapis.com/index.html?path=80.0.3987.16/
+	download chromedriver.exe
+-And you also need to install the selenium package to python
+
+
