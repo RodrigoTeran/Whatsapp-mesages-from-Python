@@ -1,23 +1,21 @@
-# Code to send message to Whatsapp from python 3.7
+# Code to send message to WhatsApp from python 3.7
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 import socket
 
 # -----------------------------------CHANGE-----------------------------------
-message_text = 'message...'  # message you want to send
+message_text = 'mesage...'  # message you want to send
 no_of_message = 1  # number of times the message is send
-# phone number (integer) or a link to a group (string)
-moblie_no_list = [0000000000]
+# phone numbers (integer) or links to WhatsApp groups (string)
+moblie_no_list = [000000000, 000000000, 000000000]
 # -----------------------------------CHANGE-----------------------------------
 
 
 def element_presence(by, xpath, time):
-    element_present = EC.presence_of_element_located((By.XPATH, xpath))
+    element_present = ec.presence_of_element_located((by, xpath))
     WebDriverWait(driver, time).until(element_present)
 
 
@@ -38,7 +36,7 @@ def send_whatsapp_msg(phone_no, text):
     driver.get(
         "https://web.whatsapp.com/send?phone={}&source=&data=#".format(phone_no))
     try:
-        driver.switch_to_alert().accept()
+        driver.switch_to.alert
     except:
         pass
     try:
